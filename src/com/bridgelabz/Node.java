@@ -1,12 +1,11 @@
 package com.bridgelabz;
 
 public class Node {
-    int data;
+    int key;
     Node next;
-
-    // Parameter Constructor
-    Node(int data) {
-        this.data = data;
-        this.next = null;
+    public Node(int key)
+    {
+        this.key = key;
+        this.next=null;
     }
 }
