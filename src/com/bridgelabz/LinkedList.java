@@ -50,7 +50,17 @@ public class LinkedList<T> {
         return null;
     }
 
-    public void pop(){
-        head = head.next;
+    void deleteFirst() {
+        if (head != null) {
+            head = head.next;
+        }
+    }
+
+    void deleteLast() {
+        Node<T> temp = head;
+        while (temp.next != tail) {
+            temp = temp.next;
+        }
+        temp.next = (null);
     }
 }
