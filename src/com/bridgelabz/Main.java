@@ -30,8 +30,12 @@ public class Main {
         list.insertAfter(x2,fon);
         list.display();
 
-        System.out.println("\n\nPop method");
-        list.pop();
+        System.out.println("\n\nDelete first element (pop)");
+        list.deleteFirst();
+        list.display();
+
+        System.out.println("\n\nDelete last element");
+        list.deleteLast();
         list.display();
     }
 }
