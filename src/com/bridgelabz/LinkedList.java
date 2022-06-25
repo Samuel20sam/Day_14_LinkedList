@@ -1,28 +1,27 @@
 package com.bridgelabz;
 
-public class LinkedList {
-    Node head, tail;
+public class LinkedList<T> {
+    Node<T> head;
+    Node<T> tail;
 
-    public void add(int data) {
-        Node newNode = new Node(data);
-        if (head == null)
-            head = newNode;
-        else
-            tail.next = newNode;
-        tail = newNode;
+    void add(Node<T> newNode) {
+        if (head == null) {
+            tail = newNode;
+        } else {
+            newNode.next = head;
+        }
+        head = newNode;
     }
 
     public void display() {
-        Node temp = head;
-        while (temp != null)
-        {
-            System.out.print(temp.key + "->");
+        System.out.println();
+        Node<T> temp = head;
+        while (temp != null) {
+            System.out.print(temp.value + "->");
             temp = temp.next;
         }
     }
-
-    public void push(int data) {
-        Node newNode = new Node(data);
+    public void push(Node<T> newNode) {
         if (head == null) {
             head = newNode;
             tail = newNode;
@@ -31,22 +30,27 @@ public class LinkedList {
             head = newNode;
         }
     }
-    public void insertAfter(int prevData,int data){
-        Node newNode = new Node(data);
-        Node searchedNode = this.search(prevData);
-        if( searchedNode != null){
-            newNode.next = searchedNode.next;
+
+    public void insertAfter(T prevData, Node<T> newNode){
+        Node<T> searchedNode = this.search(prevData);
+        if (searchedNode != null){
+            Node<T> temp = searchedNode.next;
             searchedNode.next = newNode;
-            //newNode.next = tempNode;
+            newNode.next = temp;
         }
     }
-    public Node search(int data){
-        Node temp = head;
-        while(temp != null){
-            if(temp.key == data)
+    public Node<T> search(T data){
+        Node<T> temp = head;
+        while (temp != null) {
+            if (temp.value == data) {
                 return temp;
+            }
             temp = temp.next;
         }
         return null;
+    }
+
+    public void pop(){
+        head = head.next;
     }
 }
