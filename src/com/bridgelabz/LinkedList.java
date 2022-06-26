@@ -29,6 +29,17 @@ public class LinkedList<T> {
             head = newNode;
         }
     }
+    void insert(Node<T> newNode) {
+        if (head == null) {
+            head = newNode;
+        } else if (tail == null) {
+            tail = newNode;
+        } else {
+            head.next = newNode;
+            newNode.next = tail;
+
+        }
+    }
 
     public void insertAfter(T prevData, Node<T> newNode){
         Node<T> searchedNode = this.search(prevData);
