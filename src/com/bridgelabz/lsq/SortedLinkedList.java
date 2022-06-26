@@ -1,4 +1,4 @@
-package com.bridgelabz;
+package com.bridgelabz.lsq;
 
 public class SortedLinkedList<T extends Comparable<T>> {
     Node<T> head;
@@ -8,21 +8,20 @@ public class SortedLinkedList<T extends Comparable<T>> {
         insert(newNode);
     }
 
-    void insert(Node<T> info){
-        if ((head == null) || (info.compareTo(head) < 0)) {
-            info.next = (head);
-            head = info;
+    void insert(Node<T> node){
+        if (head == null){
+            head = node;
         } else {
             Node<T> current = head;
-            while ((current.next != null) && (info.compareTo(current.next) > 0)) {
+            while ((current.next != null) && (node.compareTo(current.next) > 0)) {
                 current = current.next;
             }
             if (current.next == null) {
-                current.next = info;
+                current.next = node;
             }
-            if (info.compareTo(current.next) < 0) {
-                info.next = current.next;
-                current.next = info;
+            if (node.compareTo(current.next) < 0) {
+                node.next = current.next;
+                current.next = node;
             }
         }
     }

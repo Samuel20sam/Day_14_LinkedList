@@ -1,6 +1,7 @@
-package com.bridgelabz;
+package com.bridgelabz.lsq;
 
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -52,11 +53,21 @@ public class Main {
 //        list.delete(x3);
 //        list.display();
 
-        SortedLinkedList<Integer> sList = new SortedLinkedList<>();
-        sList.add(fn);
-        sList.add(sn);
-        sList.add(tn);
-        sList.add(fon);
-        sList.display();
+//        SortedLinkedList<Integer> sList = new SortedLinkedList<>();
+//        sList.add(fn);
+//        sList.add(sn);
+//        sList.add(tn);
+//        sList.add(fon);
+//        sList.display();
+
+        Stack<Integer> stack = new Stack<>();
+        stack.push(fn);
+        stack.push(sn);
+        stack.push(tn);
+        stack.push(fon);
+        stack.display();
+        stack.peekPop();
+        System.out.println("\n\nDelete first element (pop)");
+        stack.display();
     }
 }
