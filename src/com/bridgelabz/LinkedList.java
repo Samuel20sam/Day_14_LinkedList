@@ -14,10 +14,9 @@ public class LinkedList<T> {
     }
 
     public void display() {
-        System.out.println();
         Node<T> temp = head;
         while (temp != null) {
-            System.out.print(temp.value + "->");
+            System.out.print(temp.value +"->");
             temp = temp.next;
         }
     }
