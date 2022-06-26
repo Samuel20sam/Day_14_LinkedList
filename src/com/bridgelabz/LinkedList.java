@@ -3,7 +3,17 @@ package com.bridgelabz;
 public class LinkedList<T> {
     Node<T> head;
     Node<T> tail;
-
+    int size;
+    public void display() {
+        Node<T> temp = head;
+        while (temp != null) {
+            System.out.print(temp.value +"->");
+            size++;
+            temp = temp.next;
+        }
+        System.out.println("\nSize of linked list is " +size);
+        size = 0;
+    }
     void add(Node<T> newNode) {
         if (head == null) {
             tail = newNode;
@@ -13,13 +23,6 @@ public class LinkedList<T> {
         head = newNode;
     }
 
-    public void display() {
-        Node<T> temp = head;
-        while (temp != null) {
-            System.out.print(temp.value +"->");
-            temp = temp.next;
-        }
-    }
     public void push(Node<T> newNode) {
         if (head == null) {
             head = newNode;
@@ -72,5 +75,15 @@ public class LinkedList<T> {
             temp = temp.next;
         }
         temp.next = (null);
+    }
+    void delete(T deleteNode) {
+        Node<T> replace = new Node<>(deleteNode);
+        Node<T> searchNode = this.search(deleteNode);
+        Node<T> temp = head;
+        while (temp != searchNode) {
+            replace = temp;
+            temp = temp.next;
+        }
+        replace.next = searchNode.next;
     }
 }
