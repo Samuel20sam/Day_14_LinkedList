@@ -86,4 +86,14 @@ public class LinkedList<T extends Comparable<T>> {
         }
         replace.next = searchNode.next;
     }
+
+    void last(Node<T> newNode) {
+        if (head == null) {
+            head = newNode;
+        }
+        if (tail != null) {
+            tail.next = newNode;
+        }
+        tail = newNode;
+    }
 }
