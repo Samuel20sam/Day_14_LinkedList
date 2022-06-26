@@ -1,4 +1,4 @@
-package com.bridgelabz;
+package com.bridgelabz.lsq;
 
 public class LinkedList<T extends Comparable<T>> {
     Node<T> head;
@@ -11,7 +11,7 @@ public class LinkedList<T extends Comparable<T>> {
             size++;
             temp = temp.next;
         }
-        System.out.println("\nSize of linked list is " +size);
+        System.out.println("\nSize of the list is " +size);
         size = 0;
     }
     void add(Node<T> newNode) {

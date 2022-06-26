@@ -1,4 +1,4 @@
-package com.bridgelabz;
+package com.bridgelabz.lsq;
 
 public class Node<T extends Comparable<T>> {
     T value;
