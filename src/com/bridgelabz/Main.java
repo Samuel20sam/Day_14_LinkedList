@@ -5,14 +5,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Type three integer");
-        int x1 = input.nextInt(), x2 = input.nextInt(), x3 = input.nextInt();
-//                x4 = input.nextInt();
+        int x1 = input.nextInt(), x2 = input.nextInt(), x3 = input.nextInt(), x4 = input.nextInt();
 
         LinkedList<Integer> list = new LinkedList<>();
         Node<Integer> fn = new Node<>(x1);
         Node<Integer> sn = new Node<>(x2);
         Node<Integer> tn = new Node<>(x3);
-//        Node<Integer> fon = new Node<>(x4);
+        Node<Integer> fon = new Node<>(x4);
 
 //        System.out.println("Add method");
 //        list.add(fn);
@@ -26,9 +25,9 @@ public class Main {
         list.push(tn);
         list.display();
 
-//        System.out.println("\n\nInsert " + fon + " after " + x2);
-//        list.insertAfter(x2, fon);
-//        list.display();
+        System.out.println("\n\nInsert " + fon + " after " + x2);
+        list.insertAfter(x2, fon);
+        list.display();
 
         System.out.println("\n\nInserting second element");
         list.insert(sn);
@@ -49,5 +48,9 @@ public class Main {
         } else {
             System.out.println("Data found");
         }
+
+        System.out.println("\n\nDelete the node with value " +x3);
+        list.delete(x3);
+        list.display();
     }
 }
